@@ -56,3 +56,5 @@ void Tests::tests_application_cas_02()
    cout << "TESTS APPLICATION (CAS 02)" << endl;  
     // Il faut ajouter les operations realisant ce scenario de test.
 }
+
+
