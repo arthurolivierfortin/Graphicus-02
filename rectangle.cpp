@@ -1,7 +1,9 @@
 #include "rectangle.h"
+#include <stdio.h>
 
 
-Rectangle::Rectangle(int largeur = 1, int hauteur = 1, int x1 = 0, int y1 = 0)
+Rectangle::Rectangle(int largeur = 1, int hauteur = 1, int x1 = 0, int y1 = 0) 
+: l(largeur), h(hauteur), Forme(x1, y1)
 {
     
 }
@@ -10,10 +12,10 @@ Rectangle::~Rectangle(){}
 
 void Rectangle::afficher(ostream &s)
 {
-    s << "Rectangle (x=%d,y=%d, l=%d, h=%d, aire=%f)\n" << ancrage.x << ancrage.y << largeur << hauteur << aire() << std::endl;
+    printf("Rectangle (x=%d,y=%d, l=%d, h=%d, aire=%f)\n", ancrage.x, ancrage.y, l, h, aire());
 }
 
 double Rectangle::aire()
 {
-    return (hauteur*largeur);
+    return (h*l);
 }

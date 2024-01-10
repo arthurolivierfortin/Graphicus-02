@@ -15,7 +15,7 @@ using namespace std;
 
 int main()
 {
-   Rectangle rectangle_1 = (5,4, 2,1);
+   Rectangle rectangle_1 = {5,4, 2,1};
    rectangle_1.afficher(std::cout);
 
    return 0;

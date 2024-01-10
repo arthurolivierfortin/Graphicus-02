@@ -7,6 +7,6 @@ class Rectangle:public Forme
         ~Rectangle();
         void afficher(ostream &s) override;
         double aire() override;
-        int largeur;
-        int hauteur;
+        int l;
+        int h;
 };
