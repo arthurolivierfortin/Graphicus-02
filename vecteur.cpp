@@ -120,12 +120,12 @@ Forme *Vecteur::obtenir(int index)
 {
     Forme *p = NULL;
     
-    if(tableau[index] == NULL || tableau[i] < 0 || tableau[i] > capacite-1)
+    if(tableau[index] == NULL || index < 0 || index > capacite-1)
     {
         return p;
     }
 
-    p = tableau[i];
+    p = tableau[index];
 
     return p;
 }
