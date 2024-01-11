@@ -10,4 +10,7 @@
 
 #include "couche.h"
 
-// Implementation a faire...
+Couche::Couche(int capacite)
+{
+    
+}

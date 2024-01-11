@@ -1,7 +1,7 @@
-#include "forme.h"
+#include "rectangle.h"
 
 
-class Carre:public Forme
+class Carre:public Rectangle
 {
     public:
         Carre(int largeur, int x1, int y1);

@@ -13,6 +13,7 @@
 #include <iostream>
 #include "coordonnee.h"
 
+
 using namespace std;
 
 class Forme

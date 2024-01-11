@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 Carre::Carre(int largeur, int x1, int y1)
-: l(largeur), Forme(x1, y1)
+: l(largeur), Rectangle(l, l, x1, y1)
 {
 
 }
