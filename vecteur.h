@@ -5,6 +5,8 @@ class Vecteur
     public:
         Vecteur(int c = 1);
         ~Vecteur();
+        int getCapacite();
+        int getTaille();
         void doubler();
         void vider();
         bool estVide();

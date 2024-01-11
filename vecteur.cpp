@@ -138,3 +138,13 @@ void Vecteur::afficher(ostream &s)
     }
 }
 
+int Vecteur::getCapacite()
+{
+   return capacite;
+}
+
+int Vecteur::getTaille()
+{
+   return taille;
+}
+
