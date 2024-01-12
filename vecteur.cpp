@@ -69,66 +69,7 @@ bool Vecteur::estVide()
     return true;
 }
 
-bool Vecteur::ajouter(Forme *p)
-{
-    if(taille == capacite)
-    {
-        doubler();
-    }
 
-    tableau[taille+1] = p;
-
-    taille++;
-
-    return true;
-}
-
-Forme *Vecteur::retirer(int index)
-{
-    Forme *p = NULL;
-    if(index < 0 || index > capacite-1)
-    {
-        return p;
-    }
-
-    p = tableau[index];
-
-    delete tableau[index];
-    tableau[index] = NULL;
-
-    Forme **pt = new Forme*[capacite];
-    
-    int y = 0;
-    for(int i=0; i<capacite; i++)
-    {
-        if(tableau[i] == NULL)
-        {
-            continue;
-        }
-
-        pt[y++] = tableau[i];
-    }
-
-    cpyTableau(pt, tableau);
-
-    taille--;
-
-    return p;
-}
-
-Forme *Vecteur::obtenir(int index)
-{
-    Forme *p = NULL;
-    
-    if(tableau[index] == NULL || index < 0 || index > capacite-1)
-    {
-        return p;
-    }
-
-    p = tableau[index];
-
-    return p;
-}
 
 void Vecteur::afficher(ostream &s)
 {
@@ -147,4 +88,5 @@ int Vecteur::getTaille()
 {
    return taille;
 }
+
 
