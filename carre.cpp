@@ -17,7 +17,7 @@ double Carre::aire()
     return (l*l);
 }
 
-void Carre::afficher(ostream & s)
+void Carre::afficher(std::ostream & s)
 {
     printf("Carre (x=%d,y=%d, l=%d, aire=%f)\n", ancrage.x, ancrage.y, l, aire());
 }

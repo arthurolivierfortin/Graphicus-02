@@ -1,6 +1,4 @@
-#ifndef COUCHE_H
-#include "couche.h"
-#endif
+
 
 #ifndef FORME_H
 #include "forme.h"
@@ -13,7 +11,6 @@ class Vecteur
     public:
         Vecteur(int c = 1);
         ~Vecteur();
-        virtual double aire();
         int getCapacite();
         int getTaille();
         void doubler();

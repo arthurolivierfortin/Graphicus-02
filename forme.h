@@ -13,11 +13,7 @@
 #include <iostream>
 #include "coordonnee.h"
 
-#ifndef VECTEUR_H
-#include "vecteur.h"
-#endif
-
-class Forme:public Vecteur
+class Forme
 {
 public:
   Forme(int x = 0, int y = 0);

@@ -17,12 +17,14 @@ class Couche
    public:
       Couche();
       virtual ~Couche();
-      virtual Forme *getForme(int index);
-      virtual bool addForme(Forme *p);
-      virtual Forme *rmForme(int index);
-      int etat;
-      float totalArea();
+      double totalArea();
+      bool translate(int x2, int y2);
+      bool reset();
+      bool changeState(int state);
+      void printCouche();
+
       Vecteur *vecteur;
+      int *etat;
       
 };
 

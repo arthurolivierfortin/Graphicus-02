@@ -11,9 +11,6 @@
 #include "forme.h"
 #endif
 
-#ifndef VECTEUR_H
-#include "vecteur.h"
-#endif
 
 Forme::Forme(int x1, int y1)
 {

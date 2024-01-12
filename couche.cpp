@@ -15,7 +15,8 @@
 
 Couche::Couche()
 {
-    etat = INITIALISE;
+    etat = new int;
+    *etat = INITIALISE;
     vecteur = new Vecteur;
 }
 
@@ -25,11 +26,11 @@ Couche::~Couche()
 }
 
 
-float Couche::totalArea()
+double Couche::totalArea()
 {
     float totalArea = 0;
 
-    for(int i=0; i<vecteur->capacite;i++)
+    for(int i=0; i<*vecteur->capacite;i++)
     {
         if(vecteur->tableau[i] != NULL)
         {
@@ -40,4 +41,50 @@ float Couche::totalArea()
 
     return totalArea;
 }
+
+bool Couche::translate(int x2, int y2)
+{
+    for(int i=0; i<*vecteur->capacite;i++)
+    {
+        if(vecteur->tableau[i] != NULL)
+        {
+            vecteur->tableau[i]->translater(x2, y2);
+        }    
+    }
+}
+
+bool Couche::reset()
+{
+    for(int i=0; i<*vecteur->capacite;i++)
+    {
+        if(vecteur->tableau[i] != NULL)
+        {
+            delete vecteur->tableau[i];
+        }    
+    }
+
+    *etat = INITIALISE;
+
+    return true;
+}
+
+bool Couche::changeState(int state)
+{
+    *etat = state;
+    return true; 
+}
+
+void Couche::printCouche()
+{
+    for(int i=0; i<*vecteur->capacite;i++)
+    {
+        if(vecteur->tableau[i] != NULL)
+        {
+            vecteur->tableau[i]->afficher(std::cout);
+        }    
+    }
+}
+
+
+
 

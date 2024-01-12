@@ -10,8 +10,8 @@
 MATH = -lm
 
 
-graphicus-01: graphicus-01.o tests.o canevas.o couche.o forme.o rectangle.o cercle.o carre.o
-	g++ -o graphicus-01 graphicus-01.o tests.o canevas.o couche.o forme.o rectangle.o carre.o cercle.o $(MATH)
+graphicus-01: graphicus-01.o tests.o canevas.o couche.o forme.o rectangle.o cercle.o carre.o vecteur.o
+	g++ -o graphicus-01 graphicus-01.o tests.o canevas.o couche.o forme.o rectangle.o carre.o cercle.o vecteur.o $(MATH)
 	rm  -f *.o
 
 graphicus-01.o: graphicus-01.cpp canevas.h couche.h forme.h
@@ -37,6 +37,9 @@ carre.o: carre.cpp carre.h forme.h
 
 forme.o: forme.cpp forme.h
 	g++ -c forme.cpp $(MATH)
+
+vecteur.o: vecteur.cpp vecteur.h
+	g++ -c vecteur.cpp $(MATH)
 
 clean:
 	rm  -f *.o

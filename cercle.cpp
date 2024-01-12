@@ -19,7 +19,7 @@ double Cercle::aire()
     return (M_PI*r*r);
 }
 
-void Cercle::afficher(ostream & s)
+void Cercle::afficher(std::ostream & s)
 {
     printf("Cercle (x=%d,y=%d, r=%d, aire=%f)\n", ancrage.x, ancrage.y, r, aire());
 }
