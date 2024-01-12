@@ -7,7 +7,7 @@ class Cercle:public Forme
         Cercle(int rayon, int x1, int y1);
         ~Cercle();
         double aire() override;
-        void afficher(ostream & s) override;
+        void afficher(std::ostream & s) override;
 
         int r;
 };

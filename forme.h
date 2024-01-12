@@ -7,16 +7,17 @@
  *    la distribution de Graphicus.
 ********/
 
-#ifndef FORME_H
 #define FORME_H
+
 
 #include <iostream>
 #include "coordonnee.h"
 
+#ifndef VECTEUR_H
+#include "vecteur.h"
+#endif
 
-using namespace std;
-
-class Forme
+class Forme:public Vecteur
 {
 public:
   Forme(int x = 0, int y = 0);
@@ -25,9 +26,8 @@ public:
   Coordonnee getAncrage();
   void setAncrage(Coordonnee c);
   virtual double aire() = 0;
-  virtual void afficher(ostream & s) = 0;
+  virtual void afficher(std::ostream & s) = 0;
 protected:
   Coordonnee ancrage;
 };
 
-#endif

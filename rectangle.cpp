@@ -10,7 +10,7 @@ Rectangle::Rectangle(int largeur = 1, int hauteur = 1, int x1 = 0, int y1 = 0)
 
 Rectangle::~Rectangle(){}
 
-void Rectangle::afficher(ostream &s)
+void Rectangle::afficher(std::ostream &s)
 {
     printf("Rectangle (x=%d,y=%d, l=%d, h=%d, aire=%f)\n", ancrage.x, ancrage.y, l, h, aire());
 }

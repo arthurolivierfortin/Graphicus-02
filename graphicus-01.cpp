@@ -11,6 +11,16 @@
 #include "tests.h"
 #include "rectangle.h"
 
+#ifndef COUCHE_H
+#include "couche.h"
+#endif
+
+#ifndef VECTEUR_H
+#include "vecteur.h"
+#endif
+
+
+
 using namespace std;
 
 int main()

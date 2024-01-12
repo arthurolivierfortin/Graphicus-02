@@ -7,7 +7,7 @@ class Carre:public Rectangle
         Carre(int largeur, int x1, int y1);
         ~Carre();
         double aire() override;
-        void afficher(ostream & s) override;
+        void afficher(std::ostream & s) override;
 
         int l;
 

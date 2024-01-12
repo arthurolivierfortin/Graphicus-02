@@ -1,10 +1,12 @@
 #include <iostream>
-#include <string>
+#define COUCHE_H
+
 #include "vecteur.h"
 
 
-#ifndef COUCHE_H
-#define COUCHE_H
+
+
+
 
 #define INITIALISE -1
 #define ACTIVE 1
@@ -12,18 +14,17 @@
 
 class Couche
 {
-   public:   
-      Couche(int capacite);
-      ~Couche();
-      Forme *Couche::getForme(int index);
-      bool Vecteur::addForme(Forme *p);
-      Forme *Couche::rmForme(int index);
-   private:
+   public:
+      Couche();
+      virtual ~Couche();
+      virtual Forme *getForme(int index);
+      virtual bool addForme(Forme *p);
+      virtual Forme *rmForme(int index);
       int etat;
-      Vecteur vecteur;
       float totalArea();
+      Vecteur *vecteur;
       
 };
 
 
-#endif
+
