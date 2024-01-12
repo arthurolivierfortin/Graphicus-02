@@ -19,13 +19,13 @@ class Vecteur
         void doubler();
         void vider();
         bool estVide();
-        void cpyTableau(Vecteur **p, Vecteur **tableau);
+        void cpyTableau(Forme **p,Forme **tableau);
         void afficher(std::ostream &s);
         Forme *getForme(int index);
-        bool addForme(Vecteur *p);
+        bool addForme(Forme *p);
         Forme *rmForme(int index);
 
-        Vecteur **tableau;
+        Forme **tableau;
         int *taille;
         int *capacite;
 };
