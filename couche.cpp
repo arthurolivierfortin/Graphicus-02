@@ -51,6 +51,8 @@ bool Couche::translate(int x2, int y2)
             vecteur->tableau[i]->translater(x2, y2);
         }    
     }
+
+    return true;
 }
 
 bool Couche::reset()
@@ -83,6 +85,21 @@ void Couche::printCouche()
             vecteur->tableau[i]->afficher(std::cout);
         }    
     }
+}
+
+Forme *Couche::getForme(int index)
+{
+    vecteur->getForme(index);
+}
+
+bool Couche::addForme(Forme *p)
+{
+    vecteur->addForme(p);
+}
+
+Forme *Couche::rmForme(int index)
+{
+    vecteur->rmForme(index);
 }
 
 

@@ -22,6 +22,9 @@ class Couche
       bool reset();
       bool changeState(int state);
       void printCouche();
+      Forme *getForme(int index);
+      bool addForme(Forme *p);
+      Forme *rmForme(int index);
 
       Vecteur *vecteur;
       int *etat;
