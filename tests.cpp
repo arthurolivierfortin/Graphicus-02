@@ -8,10 +8,86 @@
 ********/
 
 #include "tests.h"
+#include "rectangle.h"
+
+string espace1 = "     ";
+string espace2 = "          ";
+
+
+void printECHEC()
+{
+   std::cout << "\033[1;31mECHEC\n\033[0m\n" << std::endl;
+}
+
+void printREUSSI()
+{
+   cout << "\033[1;32mREUSSI\n\033[0m\n" << endl;
+}
+
+
+using namespace std;
 
 void Tests::tests_unitaires_formes()
-{
-   // Tests sur les formes geometriques
+{  
+   cout << "TEST_UNITAIRES_FORMES\n" << endl;
+
+   cout << espace1 << "TEST_UNITAIRES_RECTANGLE : \n";
+
+   cout << espace2 << "Creation de forme de taille normale - "<< endl;
+   Rectangle rectangle1 {2, 1};
+   rectangle1.afficher(std::cout);
+
+   if(rectangle1.getHauteur() != 2 || rectangle1.getLargeur() != 2)
+   {
+      printECHEC();
+      cout << "taille attendu : {2,1}\n" << endl;
+      rectangle1.afficher(cout);
+      cout << "\n" << endl;
+   }
+
+   else
+   {
+      printREUSSI();
+   }
+
+   cout << espace2 << "Creation de taille négative ou nulle - "<< endl;
+   Rectangle rectangle2 {-1, -1};
+
+   if(rectangle2.getHauteur() != 1 || rectangle2.getLargeur() != 1)
+   {
+      printECHEC();
+      cout << "taille attendu : {1,1}\n" << endl;
+      rectangle2.afficher(cout);
+      cout << "\n" << endl;
+   }
+
+   else
+   {
+      printREUSSI();
+   }
+
+   cout << espace2 << "Calcul d'aire - "<< endl;
+   Rectangle rectangle3 {2, 4};
+
+   if(rectangle3.aire() != 8)
+   {
+      printECHEC();
+      cout << "Aire attendu : 8\n" << endl;
+      rectangle3.afficher(cout);
+      cout << "\n" << endl;
+   }
+
+   else
+   {
+      printREUSSI();
+   }
+
+   
+
+   
+
+   //Carre
+   //Cercle
 }
 
 void Tests::tests_unitaires_vecteur()
@@ -58,3 +134,8 @@ void Tests::tests_application_cas_02()
 }
 
 
+int main()
+{
+   Tests tests;
+   tests.tests_unitaires_formes();
+}

@@ -19,17 +19,19 @@ Tâches:
     ✔ Changer le NULL des pointeurs en ptr_null @done (1/14/2024, 2:57:17 PM)
     ✔ regarder si c'est possible avec aucune couche d'activée @done (1/14/2024, 2:57:22 PM)
 
-    possibilité d'erreur:
-        Forme:
-            ✔ grandeur de forme @done (1/14/2024, 4:48:33 PM)
+Test:
+    ☐ tests_unitaires_formes
+    Rectangle:
+            ☐ creation de forme
 
-        Vecteur:
-            ☐ 
-        
-        Couche:
-            ☐ 
-        
-        Canevas:
-            ☐ 
+    ☐ tests_unitaires_vecteur
+
+    ☐ tests_unitaires_couche
+
+    ☐ tests_unitaires_canevas
+
+    ☐ tests_application_cas_01
+
+    ☐ tests_application_cas_02
         
 

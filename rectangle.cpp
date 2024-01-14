@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 
-Rectangle::Rectangle(int largeur = 1, int hauteur = 1, int x1 = 0, int y1 = 0) 
+Rectangle::Rectangle(int largeur, int hauteur, int x1, int y1) 
 :Forme(x1, y1)
 {
     if(largeur <= 0)
@@ -51,4 +51,14 @@ void Rectangle::afficher(std::ostream &s)
 double Rectangle::aire()
 {
     return ((*h)*(*l));
+}
+
+double Rectangle::getLargeur()
+{
+    return *l;
+}
+
+double Rectangle::getHauteur()
+{
+    return *h;
 }
