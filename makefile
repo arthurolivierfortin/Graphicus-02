@@ -52,5 +52,6 @@ tests_compile:
 	g++ -o tests tests.o
 	rm -f *.o
 
-run_tests:
+run_tests: tests_compile
+	make tests_compile
 	./tests

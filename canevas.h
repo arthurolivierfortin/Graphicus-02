@@ -38,7 +38,7 @@ public:
    void afficher(ostream & s);
 
 private:
-     Couche couches[MAX_COUCHES];
+   Couche couches[MAX_COUCHES];
 };
 
 #endif

@@ -12,6 +12,12 @@
 
 Canevas::Canevas()
 {
+   couches[0].changeState(ACTIVE);
+
+   for(int i=1; i<MAX_COUCHES; i++)
+   {
+      couches[i].changeState(INITIALISE);
+   }
 }
 
 Canevas::~Canevas()
@@ -25,6 +31,19 @@ bool Canevas::reinitialiser()
 
 bool Canevas::reinitialiserCouche(int index)
 {
+   
+
+   if(*couches[index].etat != ACTIVE)
+   {
+      couches[index].reset();
+   }
+
+   else
+   {
+      couches[index].reset();
+      couches[index].changeState(ACTIVE);
+   }
+   
    return true;
 }
 
