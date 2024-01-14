@@ -25,7 +25,8 @@ class Couche
       Forme *getForme(int index);
       bool addForme(Forme *p);
       Forme *rmForme(int index);
-
+   
+   private:
       Vecteur *vecteur;
       int *etat;
       

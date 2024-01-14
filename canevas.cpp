@@ -53,7 +53,7 @@ bool Canevas::reinitialiserCouche(int index)
       return false;
    }
 
-   if(*couches[index].etat != ACTIVE)
+   if(etatCouche[index] != ACTIVE)
    {
       couches[index].reset();
       etatCouche[index] = INITIALISE;
@@ -127,25 +127,68 @@ bool Canevas::ajouterForme(Forme *p_forme)
          return false;
       }
    }
-   
+
    return true;
 }
 
 bool Canevas::retirerForme(int index)
 {
+   for(int i=0; i<MAX_COUCHES; i++)
+   {
+      if(etatCouche[i] = ACTIVE)
+      {
+         if(couches->getForme(index) == NULL)
+         {
+            return false;
+         }
+         couches->rmForme(index);
+         break;
+      }
+
+      if(i == MAX_COUCHES-1)
+      {
+         return false;
+      }
+   }
    return true;
 }
 
 double Canevas::aire()
 {
-   return 0.0;
+   float totalArea = 0;
+
+   for(int i=0; i<MAX_COUCHES; i++)
+   {
+      if(etatCouche[i] != INITIALISE)
+      {
+         totalArea += couches[i].totalArea();
+      }
+   }
 }
 
 bool Canevas::translater(int deltaX, int deltaY)
 {
+   for(int i=0; i<MAX_COUCHES; i++)
+   {
+      if(etatCouche[i] == ACTIVE)
+      {
+         couches[i].translate(deltaX, deltaY);
+      }
+
+      if(i == MAX_COUCHES-1)
+      {
+         return false;
+      }
+   }
+   
    return true;
 }
 
 void Canevas::afficher(ostream & s)
 {
+   for(int i=0; i<MAX_COUCHES; i++)
+   {
+      couches[i].printCouche();
+   }
+   
 }

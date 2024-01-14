@@ -1,5 +1,0 @@
--Faire toutes les deletes
--Faire toutes les private
--Faire un template
--Faire les tests
--regarder si c'est possible avec aucune couche d'activée
