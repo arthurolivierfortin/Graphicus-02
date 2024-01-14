@@ -1,3 +1,10 @@
+New Task:
+    * Press Cmd+Enter (Ctrl+Enter on Windows and Linux) to add a new task
+    * You can also use the Command pallette to create a new task by typing To Do:New Task
+    * If you are on a new line, it will create a new task on the current line
+    * If you are on a line with some text pressing new task shortcut will convert it to a task
+    * New tasks are nested as much as the previous task
+
 * Complete a task by pressing Alt+d @done
 * Re-open a completed task by pressing Alt+d
 * Cancel a task by pressing Alt+c @cancelled
@@ -6,10 +13,12 @@
   To Do:Complete Task or To Do:Cancel Task 
 
 Tâches:
-    ☐ Faire toutes les deletes
-    ☐ Faire toutes les private
-    ☐ Faire un template
-    ☐ Faire les tests
+    ✔ Faire toutes les deletes @done (1/14/2024, 4:41:00 PM)
+    ✔ Faire toutes les private @done (1/14/2024, 4:40:57 PM)
+    ✔ Faire un template @done (1/14/2024, 4:00:01 PM)
     ✔ Changer le NULL des pointeurs en ptr_null @done (1/14/2024, 2:57:17 PM)
     ✔ regarder si c'est possible avec aucune couche d'activée @done (1/14/2024, 2:57:22 PM)
+
+    faire test:
+        ☐ grandeur de forme
 

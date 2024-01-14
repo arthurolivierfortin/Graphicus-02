@@ -10,33 +10,36 @@
 MATH = -lm
 
 
-graphicus-01: graphicus-01.o
-	g++ -o graphicus-01 graphicus-01.o canevas.o couche.o forme.o rectangle.o carre.o cercle.o vecteur.o $(MATH)
-	rm  -f *.o
 
-graphicus-01.o: canevas.o couche.o forme.o rectangle.o cercle.o carre.o vecteur.o
+
+
+graphicus-01: graphicus-01.o canevas.o couche.o forme.o rectangle.o cercle.o carre.o vecteur.o
+	g++ -o graphicus-01 graphicus-01.o canevas.o vecteur.o couche.o forme.o rectangle.o carre.o cercle.o $(MATH)
+
+graphicus-01.o: graphicus-01.cpp
 	g++ -c graphicus-01.cpp $(MATH)
 
-canevas.o: canevas.cpp canevas.h couche.h forme.h
+canevas.o: canevas.cpp couche.o canevas.h
 	g++ -c canevas.cpp $(MATH)
 
-couche.o: couche.cpp couche.h forme.h
+couche.o: couche.cpp forme.o couche.h vecteur.o
 	g++ -c couche.cpp $(MATH)
 
-rectangle.o: rectangle.cpp rectangle.h forme.h
+vecteur.o: vecteur.cpp forme.o vecteur.h
+	g++ -c vecteur.cpp $(MATH)
+
+rectangle.o: rectangle.cpp rectangle.h forme.o
 	g++ -c rectangle.cpp $(MATH)
 
-cercle.o: cercle.cpp cercle.h forme.h
+cercle.o: cercle.cpp cercle.h forme.o
 	g++ -c cercle.cpp $(MATH)
 
-carre.o: carre.cpp carre.h forme.h
+carre.o: carre.cpp forme.o carre.h
 	g++ -c carre.cpp $(MATH)
 
 forme.o: forme.cpp forme.h
 	g++ -c forme.cpp $(MATH)
 
-vecteur.o: vecteur.cpp vecteur.h
-	g++ -c vecteur.cpp $(MATH)
 
 clean:
 	rm  -f *.o

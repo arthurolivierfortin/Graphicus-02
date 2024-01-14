@@ -13,16 +13,19 @@
 #include "couche.h"
 #endif
 
+#include "vecteur.cpp"
+
 Couche::Couche()
 {
     etat = new int;
     *etat = INITIALISE;
-    vecteur = new Vecteur;
+    vecteur = new Vecteur<Forme>;
 }
 
 Couche::~Couche()
 {
-
+    delete etat;
+    delete vecteur;
 }
 
 
@@ -30,11 +33,11 @@ double Couche::totalArea()
 {
     float totalArea = 0;
 
-    for(int i=0; i<*vecteur->capacite;i++)
+    for(int i=0; i<vecteur->getCapacite();i++)
     {
-        if(vecteur->tableau[i] != nullptr)
+        if(vecteur->getForme(i) != nullptr)
         {
-            totalArea += vecteur->tableau[i]->aire();
+            totalArea += vecteur->getForme(i)->aire();
         }    
         
     }
@@ -44,11 +47,11 @@ double Couche::totalArea()
 
 bool Couche::translate(int x2, int y2)
 {
-    for(int i=0; i<*vecteur->capacite;i++)
+    for(int i=0; i<vecteur->getCapacite();i++)
     {
-        if(vecteur->tableau[i] != nullptr)
+        if(vecteur->getForme(i) != nullptr)
         {
-            vecteur->tableau[i]->translater(x2, y2);
+            vecteur->getForme(i)->translater(x2, y2);
         }    
     }
 
@@ -57,11 +60,11 @@ bool Couche::translate(int x2, int y2)
 
 bool Couche::reset()
 {
-    for(int i=0; i<*vecteur->capacite;i++)
+    for(int i=0; i<vecteur->getCapacite();i++)
     {
-        if(vecteur->tableau[i] != nullptr)
+        if(vecteur->getForme(i) != nullptr)
         {
-            delete vecteur->tableau[i];
+            delete vecteur->getForme(i);
         }    
     }
 
@@ -78,11 +81,11 @@ bool Couche::changeState(int state)
 
 void Couche::printCouche()
 {
-    for(int i=0; i<*vecteur->capacite;i++)
+    for(int i=0; i<vecteur->getCapacite();i++)
     {
-        if(vecteur->tableau[i] != nullptr)
+        if(vecteur->getForme(i) != nullptr)
         {
-            vecteur->tableau[i]->afficher(std::cout);
+            vecteur->getForme(i)->afficher(std::cout);
         }    
     }
 }

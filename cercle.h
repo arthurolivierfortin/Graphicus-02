@@ -8,6 +8,7 @@ class Cercle:public Forme
         ~Cercle();
         double aire() override;
         void afficher(std::ostream & s) override;
-
-        int r;
+        bool changeSize(int rayon);
+    private:
+        int *r;
 };

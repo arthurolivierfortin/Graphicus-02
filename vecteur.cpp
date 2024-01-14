@@ -10,24 +10,27 @@
 #include "forme.h"
 #endif
 
-
-
-Vecteur::Vecteur(int c)
+template <class T>
+Vecteur<T>::Vecteur(int c)
 {
     capacite = new int;
     *capacite = c;
     taille = new int;
-    tableau = new Forme*[*capacite];
+    tableau = new T*[*capacite];
 
     taille = 0;
 }
 
-Vecteur::~Vecteur()
+template <class T>
+Vecteur<T>::~Vecteur()
 {
     delete tableau;
+    delete capacite;
+    delete taille;
 }
 
-void Vecteur::cpyTableau(Forme **p, Forme **tableau)
+template <class T>
+void Vecteur<T>::cpyTableau(T **p, T **tableau)
 {
     for(int i=0; i<*capacite; i++)
     {
@@ -38,9 +41,10 @@ void Vecteur::cpyTableau(Forme **p, Forme **tableau)
     tableau = p;
 }
 
-void Vecteur::doubler()
+template <class T>
+void Vecteur<T>::doubler()
 {
-    Forme **p_t = new Forme*[*capacite*2];
+    T **p_t = new T*[*capacite*2];
 
     for(int i=0; i<*capacite*2; i++)
     {
@@ -53,7 +57,8 @@ void Vecteur::doubler()
 
 }
 
-void  Vecteur::vider()
+template <class T>
+void  Vecteur<T>::vider()
 {
     for(int i=0; i<*taille; i++)
     {   
@@ -68,7 +73,8 @@ void  Vecteur::vider()
     taille = 0;
 }
 
-bool Vecteur::estVide()
+template <class T>
+bool Vecteur<T>::estVide()
 {
     for(int i=0; i<*capacite; i++)
     {
@@ -82,8 +88,8 @@ bool Vecteur::estVide()
 }
 
 
-
-void Vecteur::afficher(std::ostream &s)
+template <class T>
+void Vecteur<T>::afficher(std::ostream &s)
 {
     for(int i=0; i<*capacite; i++)
     {
@@ -91,19 +97,22 @@ void Vecteur::afficher(std::ostream &s)
     }
 }
 
-int Vecteur::getCapacite()
+template <class T>
+int Vecteur<T>::getCapacite()
 {
    return *capacite;
 }
 
-int Vecteur::getTaille()
+template <class T>
+int Vecteur<T>::getTaille()
 {
    return *taille;
 }
 
-Forme *Vecteur::getForme(int index)
+template <class T>
+T *Vecteur<T>::getForme(int index)
 {
-    Forme *p = nullptr;
+    T *p = nullptr;
     
     if(tableau[index] == nullptr || index < 0 || index > *capacite-1)
     {
@@ -115,7 +124,8 @@ Forme *Vecteur::getForme(int index)
     return p;
 }
 
-bool Vecteur::addForme(Forme *p)
+template <class T>
+bool Vecteur<T>::addForme(T *p)
 {
     if(*taille == *capacite)
     {
@@ -129,9 +139,10 @@ bool Vecteur::addForme(Forme *p)
     return true;
 }
 
-Forme *Vecteur::rmForme(int index)
+template <class T>
+T *Vecteur<T>::rmForme(int index)
 {
-    Forme *p = nullptr;
+    T *p = nullptr;
     if(index < 0 || index > *capacite-1)
     {
         return p;
@@ -142,7 +153,7 @@ Forme *Vecteur::rmForme(int index)
     delete tableau[index];
     tableau[index] = nullptr;
 
-    Forme **pt = new Forme*[*capacite];
+    T **pt = new T*[*capacite];
     
     int y = 0;
     for(int i=0; i<*capacite; i++)

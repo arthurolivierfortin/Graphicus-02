@@ -6,6 +6,8 @@
 
 #define VECTEUR_H
 
+
+template <class T>
 class Vecteur
 {
     public:
@@ -16,13 +18,14 @@ class Vecteur
         void doubler();
         void vider();
         bool estVide();
-        void cpyTableau(Forme **p,Forme **tableau);
+        void cpyTableau(T **p,T **tableau);
         void afficher(std::ostream &s);
-        Forme *getForme(int index);
-        bool addForme(Forme *p);
-        Forme *rmForme(int index);
+        T *getForme(int index);
+        bool addForme(T *p);
+        T *rmForme(int index);
 
-        Forme **tableau;
+    private:
+        T **tableau;
         int *taille;
         int *capacite;
 };

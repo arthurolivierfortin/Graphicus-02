@@ -28,6 +28,8 @@ Canevas::Canevas()
 
 Canevas::~Canevas()
 {
+   delete etatCouche;
+   delete couches;
 }
 
 bool Canevas::reinitialiser()

@@ -12,6 +12,7 @@
 #define ACTIVE 1
 #define INACTIVE 0
 
+
 class Couche
 {
    public:
@@ -27,7 +28,7 @@ class Couche
       Forme *rmForme(int index);
    
    private:
-      Vecteur *vecteur;
+      Vecteur<Forme> *vecteur;
       int *etat;
       
 };
