@@ -1,8 +1,15 @@
+* Complete a task by pressing Alt+d @done
+* Re-open a completed task by pressing Alt+d
+* Cancel a task by pressing Alt+c @cancelled
+* Complete a cancelled task by pressing Alt+d
+* You can also use the Command pallette to complete or cancel a task by typing 
+  To Do:Complete Task or To Do:Cancel Task 
+
 Tâches:
     ☐ Faire toutes les deletes
     ☐ Faire toutes les private
     ☐ Faire un template
     ☐ Faire les tests
-    ☐ Changer le NULL des pointeurs en ptr_null
-    ☐ regarder si c'est possible avec aucune couche d'activée
+    ✔ Changer le NULL des pointeurs en ptr_null @done (1/14/2024, 2:57:17 PM)
+    ✔ regarder si c'est possible avec aucune couche d'activée @done (1/14/2024, 2:57:22 PM)
 

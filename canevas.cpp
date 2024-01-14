@@ -137,7 +137,7 @@ bool Canevas::retirerForme(int index)
    {
       if(etatCouche[i] = ACTIVE)
       {
-         if(couches->getForme(index) == NULL)
+         if(couches->getForme(index) == nullptr)
          {
             return false;
          }
@@ -164,6 +164,8 @@ double Canevas::aire()
          totalArea += couches[i].totalArea();
       }
    }
+
+   return totalArea;
 }
 
 bool Canevas::translater(int deltaX, int deltaY)

@@ -32,7 +32,7 @@ double Couche::totalArea()
 
     for(int i=0; i<*vecteur->capacite;i++)
     {
-        if(vecteur->tableau[i] != NULL)
+        if(vecteur->tableau[i] != nullptr)
         {
             totalArea += vecteur->tableau[i]->aire();
         }    
@@ -46,7 +46,7 @@ bool Couche::translate(int x2, int y2)
 {
     for(int i=0; i<*vecteur->capacite;i++)
     {
-        if(vecteur->tableau[i] != NULL)
+        if(vecteur->tableau[i] != nullptr)
         {
             vecteur->tableau[i]->translater(x2, y2);
         }    
@@ -59,7 +59,7 @@ bool Couche::reset()
 {
     for(int i=0; i<*vecteur->capacite;i++)
     {
-        if(vecteur->tableau[i] != NULL)
+        if(vecteur->tableau[i] != nullptr)
         {
             delete vecteur->tableau[i];
         }    
@@ -80,7 +80,7 @@ void Couche::printCouche()
 {
     for(int i=0; i<*vecteur->capacite;i++)
     {
-        if(vecteur->tableau[i] != NULL)
+        if(vecteur->tableau[i] != nullptr)
         {
             vecteur->tableau[i]->afficher(std::cout);
         }    
@@ -89,17 +89,18 @@ void Couche::printCouche()
 
 Forme *Couche::getForme(int index)
 {
-    vecteur->getForme(index);
+    return vecteur->getForme(index);
 }
 
 bool Couche::addForme(Forme *p)
 {
     vecteur->addForme(p);
+    return true;
 }
 
 Forme *Couche::rmForme(int index)
 {
-    vecteur->rmForme(index);
+    return vecteur->rmForme(index);
 }
 
 

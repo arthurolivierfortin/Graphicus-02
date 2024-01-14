@@ -44,7 +44,7 @@ void Vecteur::doubler()
 
     for(int i=0; i<*capacite*2; i++)
     {
-        p_t[i] = NULL;
+        p_t[i] = nullptr;
     }
 
     cpyTableau(tableau, p_t);
@@ -57,10 +57,10 @@ void  Vecteur::vider()
 {
     for(int i=0; i<*taille; i++)
     {   
-        if(tableau[i] != NULL)
+        if(tableau[i] != nullptr)
         {
             delete tableau[i];
-            tableau[i] = NULL;
+            tableau[i] = nullptr;
         }
         
     }
@@ -72,7 +72,7 @@ bool Vecteur::estVide()
 {
     for(int i=0; i<*capacite; i++)
     {
-        if(tableau[i] != NULL)
+        if(tableau[i] != nullptr)
         {
             return false;
         }
@@ -103,9 +103,9 @@ int Vecteur::getTaille()
 
 Forme *Vecteur::getForme(int index)
 {
-    Forme *p = NULL;
+    Forme *p = nullptr;
     
-    if(tableau[index] == NULL || index < 0 || index > *capacite-1)
+    if(tableau[index] == nullptr || index < 0 || index > *capacite-1)
     {
         return p;
     }
@@ -131,7 +131,7 @@ bool Vecteur::addForme(Forme *p)
 
 Forme *Vecteur::rmForme(int index)
 {
-    Forme *p = NULL;
+    Forme *p = nullptr;
     if(index < 0 || index > *capacite-1)
     {
         return p;
@@ -140,14 +140,14 @@ Forme *Vecteur::rmForme(int index)
     p = tableau[index];
 
     delete tableau[index];
-    tableau[index] = NULL;
+    tableau[index] = nullptr;
 
     Forme **pt = new Forme*[*capacite];
     
     int y = 0;
     for(int i=0; i<*capacite; i++)
     {
-        if(tableau[i] == NULL)
+        if(tableau[i] == nullptr)
         {
             continue;
         }
