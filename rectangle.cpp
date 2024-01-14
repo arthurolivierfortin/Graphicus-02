@@ -5,6 +5,18 @@
 Rectangle::Rectangle(int largeur = 1, int hauteur = 1, int x1 = 0, int y1 = 0) 
 :Forme(x1, y1)
 {
+    if(largeur <= 0)
+    {
+        largeur = 1;
+        std::cout << "Une largeur négative a été entré, la largeur de la forme à donc été initié à 1.\n" << std::endl;
+    }
+
+    if(hauteur <= 0)
+    {
+        largeur = 1;
+        std::cout << "Une hauteur négative a été entré, la hauteur de la forme à donc été initié à 1.\n" << std::endl;
+    }
+
     l = new int;
     *l = largeur;
 

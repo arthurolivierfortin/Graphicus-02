@@ -19,6 +19,17 @@ Tâches:
     ✔ Changer le NULL des pointeurs en ptr_null @done (1/14/2024, 2:57:17 PM)
     ✔ regarder si c'est possible avec aucune couche d'activée @done (1/14/2024, 2:57:22 PM)
 
-    faire test:
-        ☐ grandeur de forme
+    possibilité d'erreur:
+        Forme:
+            ✔ grandeur de forme @done (1/14/2024, 4:48:33 PM)
+
+        Vecteur:
+            ☐ 
+        
+        Couche:
+            ☐ 
+        
+        Canevas:
+            ☐ 
+        
 
