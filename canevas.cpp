@@ -18,6 +18,12 @@ Canevas::Canevas()
    {
       couches[i].changeState(INITIALISE);
    }
+   
+   etatCouche = new int[MAX_COUCHES];
+   etatCouche[0] = ACTIVE;
+   for (int i=1; i<5; i++) {
+      etatCouche[i] = INITIALISE;
+   }
 }
 
 Canevas::~Canevas()
@@ -26,16 +32,31 @@ Canevas::~Canevas()
 
 bool Canevas::reinitialiser()
 {
+   for(int i=0; i<MAX_COUCHES; i++)
+   {
+      couches[i].reset();
+   }
+
+   etatCouche[0] = ACTIVE;
+   for (int i=1; i<5; i++) {
+      etatCouche[i] = INITIALISE;
+   }
+   
    return true;
 }
 
 bool Canevas::reinitialiserCouche(int index)
 {
    
+   if(index < 0 || index > MAX_COUCHES-1)
+   {
+      return false;
+   }
 
    if(*couches[index].etat != ACTIVE)
    {
       couches[index].reset();
+      etatCouche[index] = INITIALISE;
    }
 
    else
@@ -49,16 +70,64 @@ bool Canevas::reinitialiserCouche(int index)
 
 bool Canevas::activerCouche(int index)
 {
+   if(index < 0 || index > MAX_COUCHES-1)
+   {
+      return false;
+   }
+
+   for(int i=0; i<MAX_COUCHES; i++)
+   {
+      if(etatCouche[i] == ACTIVE)
+      {
+         if(index == i)
+         {
+            return true;
+         }
+
+         couches[i].changeState(INACTIVE);
+         etatCouche[i] = INACTIVE;
+         break;
+      }
+   }
+
+   couches[index].changeState(ACTIVE);
+   etatCouche[index] = ACTIVE;
+   
    return true;
 }
 
 bool Canevas::desactiverCouche(int index)
 {
+   //En ce moment c'est possible de ne pas avoir de couche active
+   if(index < 0 || index > MAX_COUCHES-1)
+   {
+      return false;
+   }
+
+   if(etatCouche[index] == ACTIVE)
+   {
+      couches[index].changeState(INACTIVE);
+   }
+   
    return true;
 }
 
 bool Canevas::ajouterForme(Forme *p_forme)
 {
+   for(int i=0; i<MAX_COUCHES; i++)
+   {
+      if(etatCouche[i] = ACTIVE)
+      {
+         couches->addForme(p_forme);
+         break;
+      }
+
+      if(i == MAX_COUCHES-1)
+      {
+         return false;
+      }
+   }
+   
    return true;
 }
 
