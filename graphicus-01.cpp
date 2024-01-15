@@ -27,7 +27,8 @@ int main()
 {
    Tests test;
 
-   test.tests_unitaires_formes();
+   //test.tests_unitaires_formes();
+   test.tests_application_cas_01();
 
    return 0;
 }

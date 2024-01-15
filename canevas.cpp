@@ -123,6 +123,7 @@ bool Canevas::ajouterForme(Forme *p_forme)
          couches->addForme(p_forme);
          break;
       }
+      
 
       if(i == MAX_COUCHES-1)
       {

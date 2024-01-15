@@ -419,12 +419,33 @@ void Tests::tests_application()
 
 void Tests::tests_application_cas_01()
 {
-   cout << "TESTS APPLICATION (CAS 01)" << endl; 
-   // Il faut ajouter les operations realisant ce scenario de test.
+   cout << "TESTS APPLICATION (CAS 01)" << endl;
+   
+   cout << espace1 << "ETAPE1-creation de trois formes : " << endl;
+
+   Canevas canevas1;
+
+
+   canevas1.activerCouche(2);
+   
+   Cercle cercle1 {0,1,5};
+   Cercle *p_cercle1 = &cercle1;
+   Carre carre1 {1,2,6};
+   Carre *p_carre1 = &carre1; 
+   Rectangle rectangle1 {2,3,4,9};
+   Rectangle *p_rectangle1 = &rectangle1;
+  
+   canevas1.ajouterForme(p_cercle1);
+   canevas1.ajouterForme(p_carre1);
+   canevas1.ajouterForme(p_rectangle1);
+   
+   canevas1.afficher(cout);
 }
 
 void Tests::tests_application_cas_02()
 {
    cout << "TESTS APPLICATION (CAS 02)" << endl;  
-   cout << espace1 << endl;
+   
+
+   
 }
