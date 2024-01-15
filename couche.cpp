@@ -97,7 +97,7 @@ Forme *Couche::getForme(int index)
 
 bool Couche::addForme(Forme *p)
 {
-    std::cout << "XXX" << std::endl;vecteur->addForme(p);
+    vecteur->addForme(p);
     return true;
 }
 

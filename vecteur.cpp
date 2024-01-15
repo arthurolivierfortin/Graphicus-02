@@ -16,9 +16,10 @@ Vecteur<T>::Vecteur(int c)
     capacite = new int;
     *capacite = c;
     taille = new int;
+
     tableau = new T*[*capacite];
 
-    taille = 0;
+    *taille = 0;
 }
 
 template <class T>
@@ -44,6 +45,7 @@ void Vecteur<T>::cpyTableau(T **p, T **tableau)
 template <class T>
 void Vecteur<T>::doubler()
 {
+    
     T **p_t = new T*[*capacite*2];
 
     for(int i=0; i<*capacite*2; i++)
@@ -129,13 +131,13 @@ bool Vecteur<T>::addForme(T *p)
 {
     if(*taille == *capacite)
     {
-        doubler();
+       doubler();
     }
-
-    tableau[*taille+1] = p;
-
-    taille++;
-
+    
+    tableau[(*taille)+1] = p;
+    
+    *taille++;
+    
     return true;
 }
 
