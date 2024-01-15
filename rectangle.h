@@ -2,6 +2,8 @@
 #include "forme.h"
 #endif
 
+#define RECTANGLE_H
+
 class Rectangle:public Forme
 {
     public:

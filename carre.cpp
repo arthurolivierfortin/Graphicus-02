@@ -28,5 +28,5 @@ bool Carre::changeSize(int largeur)
 
 void Carre::afficher(std::ostream & s)
 {
-    printf("Carre (x=%d,y=%d, l=%d, aire=%f)\n", ancrage.x, ancrage.y, *l, aire());
+    printf("Carre (x=%d,y=%d, l=%d, aire=%f)", ancrage.x, ancrage.y, *l, aire());
 }

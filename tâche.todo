@@ -22,7 +22,9 @@ Tâches:
 Test:
     ☐ tests_unitaires_formes
     Rectangle:
-            ☐ creation de forme
+            ✔ creation de forme @done (1/15/2024, 8:52:42 AM)
+            ✔ dimension negative @done (1/15/2024, 8:52:41 AM)
+            ✔ calcul d'aire @done (1/15/2024, 8:52:54 AM)
 
     ☐ tests_unitaires_vecteur
 

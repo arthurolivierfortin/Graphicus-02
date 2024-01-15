@@ -25,6 +25,11 @@ double Cercle::aire()
     return (M_PI*(*r)*(*r));
 }
 
+int Cercle::getRayon()
+{
+    return *r;
+}
+
 bool Cercle::changeSize(int rayon)
 {
     *r = rayon;
@@ -33,5 +38,5 @@ bool Cercle::changeSize(int rayon)
 
 void Cercle::afficher(std::ostream & s)
 {
-    printf("Cercle (x=%d,y=%d, r=%d, aire=%f)\n", ancrage.x, ancrage.y, *r, aire());
+    printf("Cercle (x=%d,y=%d, r=%d, aire=%f)", ancrage.x, ancrage.y, *r, aire());
 }
