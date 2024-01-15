@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 
-Rectangle::Rectangle(int largeur, int hauteur, int x1, int y1) 
+Rectangle::Rectangle(int x1, int y1, int largeur, int hauteur) 
 :Forme(x1, y1)
 {
     if(largeur <= 0)
@@ -16,7 +16,6 @@ Rectangle::Rectangle(int largeur, int hauteur, int x1, int y1)
         hauteur = 1;
         //std::cout << "Une hauteur négative a été entré, la hauteur de la forme à donc été initié à 1.\n" << std::endl;
     }
-
 
     l = new int;
     *l = largeur;

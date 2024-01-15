@@ -1,8 +1,8 @@
 #include "carre.h"
 #include <stdio.h>
 
-Carre::Carre(int largeur, int x1, int y1)
-: Rectangle(largeur, largeur, x1, y1)
+Carre::Carre(int x1, int y1, int largeur)
+: Rectangle(x1, y1,largeur, largeur)
 {
 
 }

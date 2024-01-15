@@ -3,7 +3,7 @@
 #include <math.h>
 
 
-Cercle::Cercle(int rayon, int x1, int y1)
+Cercle::Cercle(int x1, int y1, int rayon)
 : Forme(x1,y1) 
 {
     if(rayon <= 0)

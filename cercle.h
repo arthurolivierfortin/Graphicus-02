@@ -8,7 +8,7 @@
 class Cercle:public Forme
 {
     public:
-        Cercle(int rayon, int x1 = 0, int y1 = 0);
+        Cercle(int x1 = 0, int y1 = 0, int rayon = 1);
         ~Cercle();
         double aire() override;
         void afficher(std::ostream & s) override;
