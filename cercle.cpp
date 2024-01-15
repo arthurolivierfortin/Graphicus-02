@@ -9,7 +9,7 @@ Cercle::Cercle(int rayon, int x1, int y1)
     if(rayon <= 0)
     {
         rayon = 1;
-        std::cout << "Une valeur de rayon négative a été entré, le rayon de la forme a donc été initié à 1.\n" << std::endl;
+        //std::cout << "Une valeur de rayon négative a été entré, le rayon de la forme a donc été initié à 1.\n" << std::endl;
     }
     r = new int;
     *r = rayon;

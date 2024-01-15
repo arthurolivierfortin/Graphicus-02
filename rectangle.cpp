@@ -8,13 +8,13 @@ Rectangle::Rectangle(int largeur, int hauteur, int x1, int y1)
     if(largeur <= 0)
     {
         largeur = 1;
-        std::cout << "Une largeur négative a été entré, la largeur de la forme à donc été initié à 1.\n" << std::endl;
+        //std::cout << "Une largeur négative a été entré, la largeur de la forme à donc été initié à 1.\n" << std::endl;
     }
 
     if(hauteur <= 0)
     {
-        largeur = 1;
-        std::cout << "Une hauteur négative a été entré, la hauteur de la forme à donc été initié à 1.\n" << std::endl;
+        hauteur = 1;
+        //std::cout << "Une hauteur négative a été entré, la hauteur de la forme à donc été initié à 1.\n" << std::endl;
     }
 
     l = new int;
@@ -45,7 +45,7 @@ bool Rectangle::changeSize(int largeur, int hauteur)
 
 void Rectangle::afficher(std::ostream &s)
 {
-    printf("Rectangle (x=%d,y=%d, l=%d, h=%d, aire=%f)\n", ancrage.x, ancrage.y, *l, *h, aire());
+    printf("Rectangle (x=%d,y=%d, l=%d, h=%d, aire=%f)", ancrage.x, ancrage.y, *l, *h, aire());
 }
 
 double Rectangle::aire()
