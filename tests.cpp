@@ -448,7 +448,7 @@ void Tests::tests_application_cas_01()
    cout << endl; 
    cout << "=================================" << endl;
 
-   cout << espace1 << "ETAPE2-activer la couche 1 et y ajouter une forme: " << endl;
+   cout << espace1 << "\nETAPE2 et ETAPE3-activer la couche 1 et y ajouter une forme: " << endl;
 
    canevas1.activerCouche(1);
    
@@ -462,13 +462,104 @@ void Tests::tests_application_cas_01()
    cout <<  "\najouts de formes:" << endl;
    cout << "rectangle2 {0,0,12,3}\n" << endl;
    canevas1.afficher(cout);
-   cout << endl; 
+   cout << endl;
+   cout << espace1 << "\nETAPE4-afficher l'aire: " << endl;
+   cout << canevas1.aire() << endl;
    cout << "=================================" << endl;
+   
+
+   cout << espace1 << "\nETAPE5-activer la couche 0 et y ajouter trois forme : " << endl;
+
+   canevas1.activerCouche(0);
+   
+   Cercle cercle3 {0,0,1};
+   Cercle *p_cercle3 = &cercle3;
+   Carre carre3 {0,0,1};
+   Carre *p_carre3 = &carre3; 
+   Rectangle rectangle3 {0,0,1,1};
+   Rectangle *p_rectangle3 = &rectangle3;
+
+
+   canevas1.activerCouche(0);
+
+   canevas1.ajouterForme(p_rectangle3);
+   canevas1.ajouterForme(p_carre3);
+   canevas1.ajouterForme(p_cercle3);
+
+   cout << espace1 << "\nETAPE6-activer la couche 2 et faire une translation de (x=2, y=1) : " << endl;
+
+   canevas1.activerCouche(2);
+
+   canevas1.translater(2,1);
+
+   cout << espace1 << "\nETAPE7-afficher le canevas : " << endl;
+
+   cout << "=================================" << endl;
+   cout <<  "\najouts de formes dans couche 0 et translation dans couche 2 :" << endl;
+   cout << "cercle1 {0,0,1}" << endl;
+   cout << "carre1 {0,0,1}" << endl;
+   cout << "rectangle1 {0,0,1,1}\n" << endl;
+   canevas1.afficher(cout);
+   cout << endl;
+   cout << espace1 << "\nETAPE4-afficher l'aire: " << endl;
+   cout << canevas1.aire() << endl; 
+   cout << "=================================" << endl;
+
+   cout << espace1 << "\nETAPE9-activer la couche 0 et retirer la deuxième forme de la couche : " << endl;
+
+   canevas1.retirerForme(1);
+
+   cout << espace1 << "\nETAPE10-réinitialiser la couche 1 : " << endl;
+   canevas1.reinitialiserCouche(1);
+
+   cout << espace1 << "\nETAPE11-Activer la couche 4 : " << endl;
+   canevas1.activerCouche(4);
+
+   cout << espace1 << "\nETAPE12-Afficher le canevas : " << endl;
+   canevas1.afficher(cout);
+
+   cout << espace1 << "\nETAPE13-afficher l'aire: " << endl;
+   cout << canevas1.aire() << endl;
+
+   cout << espace1 << "\nETAPE14-Réinitialiser le canevas: " << endl;
+   canevas1.reinitialiser();
+
+   cout << espace1 << "\nETAPE15-Afficher le canevas : " << endl;
+   canevas1.afficher(cout);
+
+   cout << espace1 << "\nETAPE16-afficher l'aire: " << endl;
+   cout << canevas1.aire() << endl;
+
+   cout << espace1 << "\nETAPE17-activer la couche 3 et ajouter deux formes: " << endl;
+   cout << canevas1.aire() << endl;
+
+   cout <<  "\najouts de formes dans couche 3 :" << endl;
+   cout << "carre1 {0,0,1}" << endl;
+   cout << "Forme NULL" << endl;
+
+   Carre carre4 {10,10,10};
+   Carre *p_carre4 = &carre4;
+
+   canevas1.ajouterForme(p_carre3);
+   canevas1.ajouterForme(NULL);
+
+
+   cout << espace1 << "\nETAPE18-activer la couche 6: " << endl;
+   canevas1.activerCouche(6);
+
+   cout << espace1 << "\nETAPE19-afficher le canevas: " << endl;
+   canevas1.afficher(cout);
+
+   cout << espace1 << "\nETAPE20-afficher l'aire: " << endl;
+   cout << canevas1.aire() << endl;
+   
+   
 }
 
 void Tests::tests_application_cas_02()
 {
    cout << "TESTS APPLICATION (CAS 02)" << endl;  
+   
    
 
    

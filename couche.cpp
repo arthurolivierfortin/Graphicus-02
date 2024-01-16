@@ -60,14 +60,8 @@ bool Couche::translate(int x2, int y2)
 
 bool Couche::reset()
 {
-    for(int i=0; i<vecteur->getCapacite();i++)
-    {
-        if(vecteur->getForme(i) != nullptr)
-        {
-            delete vecteur->getForme(i);
-        }    
-    }
-
+    vecteur->vider();
+    
     *etat = INITIALISE;
 
     return true;

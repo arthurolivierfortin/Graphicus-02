@@ -18,6 +18,7 @@ Vecteur<T>::Vecteur(int c)
     taille = new int;
 
     tableau = new T*[*capacite];
+    
 
     *taille = 0;
 }
@@ -62,16 +63,15 @@ void Vecteur<T>::doubler()
 template <class T>
 void  Vecteur<T>::vider()
 {
-    for(int i=0; i<*taille; i++)
+    for(int i=0; i<*capacite; i++)
     {   
-        if(tableau[i] != nullptr)
+        if(getForme(i) != NULL || getForme(i) != nullptr)
         {
-            delete tableau[i];
-            tableau[i] = nullptr;
+            delete getForme(i);
         }
         
     }
-
+    delete[] tableau;
     taille = 0;
 }
 

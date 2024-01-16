@@ -46,11 +46,13 @@ bool Canevas::reinitialiserCouche(int index)
       return false;
    }
 
+
    if(couches[index].getState() != ACTIVE)
    {
       couches[index].reset();
-   }
 
+   }
+   
    else
    {
       couches[index].reset();
@@ -106,6 +108,11 @@ bool Canevas::desactiverCouche(int index)
 
 bool Canevas::ajouterForme(Forme *p_forme)
 {
+   if(p_forme == NULL)
+   {
+      return false;
+   }
+   
    for(int i=0; i<MAX_COUCHES; i++)
    {
       if(couches[i].getState() == ACTIVE)
