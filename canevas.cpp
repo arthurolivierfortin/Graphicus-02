@@ -19,17 +19,12 @@ Canevas::Canevas()
       couches[i].changeState(INITIALISE);
    }
    
-   etatCouche = new int[MAX_COUCHES];
-   etatCouche[0] = ACTIVE;
-   for (int i=1; i<5; i++) {
-      etatCouche[i] = INITIALISE;
-   }
 }
 
 Canevas::~Canevas()
 {
-   delete etatCouche;
-   delete couches;
+   //delete etatCouche;
+   //delete couches;
 }
 
 bool Canevas::reinitialiser()
@@ -39,10 +34,6 @@ bool Canevas::reinitialiser()
       couches[i].reset();
    }
 
-   etatCouche[0] = ACTIVE;
-   for (int i=1; i<5; i++) {
-      etatCouche[i] = INITIALISE;
-   }
    
    return true;
 }
@@ -55,10 +46,9 @@ bool Canevas::reinitialiserCouche(int index)
       return false;
    }
 
-   if(etatCouche[index] != ACTIVE)
+   if(couches[index].getState() != ACTIVE)
    {
       couches[index].reset();
-      etatCouche[index] = INITIALISE;
    }
 
    else
@@ -79,21 +69,21 @@ bool Canevas::activerCouche(int index)
 
    for(int i=0; i<MAX_COUCHES; i++)
    {
-      if(etatCouche[i] == ACTIVE)
+      if(couches[i].getState() == ACTIVE)
       {
          if(index == i)
          {
             return true;
          }
 
+
          couches[i].changeState(INACTIVE);
-         etatCouche[i] = INACTIVE;
          break;
       }
    }
 
    couches[index].changeState(ACTIVE);
-   etatCouche[index] = ACTIVE;
+
    
    return true;
 }
@@ -106,7 +96,7 @@ bool Canevas::desactiverCouche(int index)
       return false;
    }
 
-   if(etatCouche[index] == ACTIVE)
+   if(couches[index].getState() == ACTIVE)
    {
       couches[index].changeState(INACTIVE);
    }
@@ -118,9 +108,9 @@ bool Canevas::ajouterForme(Forme *p_forme)
 {
    for(int i=0; i<MAX_COUCHES; i++)
    {
-      if(etatCouche[i] = ACTIVE)
+      if(couches[i].getState() == ACTIVE)
       {
-         couches->addForme(p_forme);
+         couches[i].addForme(p_forme);
          break;
       }
       
@@ -138,7 +128,7 @@ bool Canevas::retirerForme(int index)
 {
    for(int i=0; i<MAX_COUCHES; i++)
    {
-      if(etatCouche[i] = ACTIVE)
+      if(couches[index].getState() == ACTIVE)
       {
          if(couches->getForme(index) == nullptr)
          {
@@ -162,7 +152,7 @@ double Canevas::aire()
 
    for(int i=0; i<MAX_COUCHES; i++)
    {
-      if(etatCouche[i] != INITIALISE)
+      if(couches[i].getState() != INITIALISE)
       {
          totalArea += couches[i].totalArea();
       }
@@ -175,7 +165,7 @@ bool Canevas::translater(int deltaX, int deltaY)
 {
    for(int i=0; i<MAX_COUCHES; i++)
    {
-      if(etatCouche[i] == ACTIVE)
+      if(couches[i].getState() == ACTIVE)
       {
          couches[i].translate(deltaX, deltaY);
       }
@@ -193,6 +183,23 @@ void Canevas::afficher(ostream & s)
 {
    for(int i=0; i<MAX_COUCHES; i++)
    {
+      cout << "----- Couche " << i << " -----" << endl;
+      cout << "État: ";
+
+      if(couches[i].getState() == INITIALISE)
+      {
+         cout << "Initialisée" << endl;
+      }
+
+      if(couches[i].getState() == ACTIVE)
+      {
+         cout << "Active" << endl;
+      }
+
+      if(couches[i].getState() == INACTIVE)
+      {
+         cout << "Inactive" << endl;
+      }
       couches[i].printCouche();
    }
    

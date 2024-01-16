@@ -24,8 +24,8 @@ Couche::Couche()
 
 Couche::~Couche()
 {
-    delete etat;
-    delete vecteur;
+    //delete etat;
+    //delete vecteur;
 }
 
 
@@ -85,9 +85,14 @@ void Couche::printCouche()
     {
         if(vecteur->getForme(i) != nullptr)
         {
-            vecteur->getForme(i)->afficher(std::cout);
+            vecteur->getForme(i)->afficher(std::cout);std::cout<<std::endl;
         }    
     }
+}
+
+int Couche::getState()
+{
+    return *etat;
 }
 
 Forme *Couche::getForme(int index)

@@ -25,9 +25,9 @@ Vecteur<T>::Vecteur(int c)
 template <class T>
 Vecteur<T>::~Vecteur()
 {
-    delete tableau;
-    delete capacite;
-    delete taille;
+    //delete tableau;
+    //delete capacite;
+    //delete taille;
 }
 
 template <class T>
@@ -133,10 +133,10 @@ bool Vecteur<T>::addForme(T *p)
     {
        doubler();
     }
-    
+
     tableau[(*taille)+1] = p;
     
-    *taille++;
+    *taille += 1;
     
     return true;
 }

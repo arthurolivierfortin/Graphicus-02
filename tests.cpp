@@ -421,7 +421,7 @@ void Tests::tests_application_cas_01()
 {
    cout << "TESTS APPLICATION (CAS 01)" << endl;
    
-   cout << espace1 << "ETAPE1-creation de trois formes : " << endl;
+   cout << espace1 << "ETAPE1-creation de trois formes et activation couche 2: " << endl;
 
    Canevas canevas1;
 
@@ -439,7 +439,31 @@ void Tests::tests_application_cas_01()
    canevas1.ajouterForme(p_carre1);
    canevas1.ajouterForme(p_rectangle1);
    
+   cout << "=================================" << endl;
+   cout <<  "\najouts de formes:" << endl;
+   cout << "cercle1 {0,1,5}" << endl;
+   cout << "carre1 {1,2,6}" << endl;
+   cout << "rectangle1 {2,3,4,9}\n" << endl;
    canevas1.afficher(cout);
+   cout << endl; 
+   cout << "=================================" << endl;
+
+   cout << espace1 << "ETAPE2-activer la couche 1 et y ajouter une forme: " << endl;
+
+   canevas1.activerCouche(1);
+   
+   Rectangle rectangle2 {0,0,12,3};
+   Rectangle *p_rectangle2 = &rectangle2;
+
+
+   canevas1.ajouterForme(p_rectangle2);
+   
+   cout << "=================================" << endl;
+   cout <<  "\najouts de formes:" << endl;
+   cout << "rectangle2 {0,0,12,3}\n" << endl;
+   canevas1.afficher(cout);
+   cout << endl; 
+   cout << "=================================" << endl;
 }
 
 void Tests::tests_application_cas_02()

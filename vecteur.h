@@ -11,7 +11,7 @@ template <class T>
 class Vecteur
 {
     public:
-        Vecteur(int c = 1);
+        Vecteur(int c = 2);
         ~Vecteur();
         int getCapacite();
         int getTaille();
